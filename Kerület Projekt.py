@@ -24,6 +24,8 @@ filemenu.add_command(label="Deltoid")
 
 filemenu.add_command(label="Téglalap")
 
+filemenu.add_command(label="Kilépés", command=exit)
+
 
 filemenu.add_separator()
 
