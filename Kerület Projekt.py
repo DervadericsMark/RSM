@@ -13,38 +13,21 @@ def harujablak():
 menubar = Menu(root)
 
 filemenu = Menu(menubar, tearoff=0)
-
-filemenu.add_command(label="Kör")
-
-filemenu.add_command(label="Négyzet")
-
-filemenu.add_command(label="Rombusz")
-
-filemenu.add_command(label="Háromszög", command=harujablak)
-
-filemenu.add_command(label="Trapéz")
-
-filemenu.add_command(label="Paralelogramma")
-
-filemenu.add_command(label="Deltoid")
-
-filemenu.add_command(label="Téglalap")
-
-
+filemenu.add_command(label="Háromszög",command=harujablak)
+filemenu.add_command(label="Kör",command=)
+filemenu.add_command(label="Négyzet",command=)
+filemenu.add_command(label="Rombusz",command=)
+filemenu.add_command(label="Trapéz",command=)
+filemenu.add_command(label="Paralelogramma",command=)
+filemenu.add_command(label="Deltoid",command=)
+filemenu.add_command(label="Téglalap",command=)
 
 filemenu.add_separator()
-
 editmenu = Menu(menubar, tearoff=0)
-
 menubar.add_cascade(label="Alakzatok", menu=filemenu)
 
-
 Kilepes = Button(root, text="Kilépés", command=exit)
-
 Kilepes.pack()
 
-
-
 root.config(menu=menubar)
-
 root.mainloop()
