@@ -2,7 +2,12 @@ from tkinter import*
 
 root = Tk()
 
-root.minsize(width=400, height=400)
+root.minsize(width=200, height=200)
+
+def ujablak():
+    abl2 = Toplevel(root)
+    abl2.title('Eredmények')
+    abl2.minsize(width=300, height = 100)
 
 menubar = Menu(root)
 
@@ -24,7 +29,6 @@ filemenu.add_command(label="Deltoid")
 
 filemenu.add_command(label="Téglalap")
 
-filemenu.add_command(label="Kilépés", command=exit)
 
 
 filemenu.add_separator()
@@ -33,6 +37,10 @@ editmenu = Menu(menubar, tearoff=0)
 
 menubar.add_cascade(label="Alakzatok", menu=filemenu)
 
+
+Kilepes = Button(root, text="Kilépés", command=exit)
+
+Kilepes.pack()
 
 
 
