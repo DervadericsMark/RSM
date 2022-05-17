@@ -4,10 +4,11 @@ root = Tk()
 
 root.minsize(width=200, height=200)
 
-def ujablak():
-    abl2 = Toplevel(root)
-    abl2.title('Eredmények')
-    abl2.minsize(width=300, height = 100)
+def harujablak():
+    abl2 =Toplevel(root)
+    gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
+    gomb2.pack(side=TOP)
+    abl2.mainloop()
 
 menubar = Menu(root)
 
@@ -19,7 +20,7 @@ filemenu.add_command(label="Négyzet")
 
 filemenu.add_command(label="Rombusz")
 
-filemenu.add_command(label="Háromszög")
+filemenu.add_command(label="Háromszög", command=harujablak)
 
 filemenu.add_command(label="Trapéz")
 
