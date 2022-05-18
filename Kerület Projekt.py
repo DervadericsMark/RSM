@@ -1,18 +1,33 @@
 from tkinter import*
+import math
 
 root = Tk()
 
-root.minsize(width=200, height=200)
 
+can1=Canvas(root,width=200, height=150,bg="white")
+photo=PhotoImage(file='hatter4.png')
+item=can1.create_image(80,80,image=photo)
+can1.pack()
+
+root.minsize(width=200, height=200)
 def harujablak():
     abl2 =Toplevel(root)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
     abl2.mainloop()
-def korujablak():
+def korujablak():    
     abl2 =Toplevel(root)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
+    def korsugar():
+        sugara = int(sugar.get())
+        magassaga = int(magassag.get())
+        eredmeny = pi * sugara * sugara * magassaga
+    def korterulet():
+        sugara*sugara*pi
+    def korkerulet():
+
+
     abl2.mainloop()
 def negyujablak():
     abl2 =Toplevel(root)
