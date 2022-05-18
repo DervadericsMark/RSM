@@ -2,7 +2,8 @@ from tkinter import*
 
 root = Tk()
 
-root.minsize(width=200, height=200)
+root.minsize(width=300, height=200)
+root.title("Alakzatok")
 
 def harujablak():
 
@@ -15,6 +16,7 @@ def harujablak():
 
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
+
     abl2.mainloop()
 def korujablak():
     abl2 =Toplevel(root)
@@ -23,9 +25,15 @@ def korujablak():
     abl2.mainloop()
 def negyujablak():
     abl2 =Toplevel(root)
+    abl2.minsize(width=200, height=200)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
     abl2.mainloop()
+def negykerulet():
+    sz1 = Label(negyujablak, text = "a:")
+    sz2 = Label(negyujablak, text='Eredmény:')
+    m1= Entry(negyujablak)
+    m2= Entry(negyujablak)
 def rombujablak():
     abl2 =Toplevel(root)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
