@@ -5,7 +5,14 @@ root = Tk()
 root.minsize(width=200, height=200)
 
 def harujablak():
+
+
     abl2 =Toplevel(root)
+    L1 = Label(abl2, text="1. oldal")
+    L1.pack( side = LEFT)
+    E1 = Entry(abl2, bd =5)
+    E1.pack(side = RIGHT)
+
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
     abl2.mainloop()
