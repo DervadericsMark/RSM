@@ -1,3 +1,6 @@
+import turtle
+
+
 from tkinter import*
 
 root = Tk()
@@ -25,15 +28,25 @@ def korujablak():
     abl2.mainloop()
 def negyujablak():
     abl2 =Toplevel(root)
-    abl2.minsize(width=200, height=200)
+    abl2.minsize(width=430, height=300)
+    L1 = Label(abl2, text="Oldalak hosszúsága")
+    L1.pack(side = LEFT)
+    E1 = Entry(abl2, bd =5)
+    E1.pack(side = LEFT)
+    E2 = Entry(abl2)
+    E2.pack(side = RIGHT)
+    def negyzetkerulet():
+        a = eval(E1.get())
+        eredmeny = a*4    
+        E2.delete(0,END)
+        E2.insert(0,int(eredmeny))
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
-    gomb2.pack(side=TOP)
+    gomb2.pack(side=BOTTOM)
+    gomb3 = Button(abl2, text="számítás", command = negyzetkerulet)
+    gomb3.pack(side=LEFT)
+
     abl2.mainloop()
-def negykerulet():
-    sz1 = Label(negyujablak, text = "a:")
-    sz2 = Label(negyujablak, text='Eredmény:')
-    m1= Entry(negyujablak)
-    m2= Entry(negyujablak)
+
 def rombujablak():
     abl2 =Toplevel(root)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
