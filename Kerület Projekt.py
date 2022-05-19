@@ -26,12 +26,16 @@ def korujablak():
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
     abl2.mainloop()
-def negyujablak():
+
+#Négyzet ablak kezdete
+#Kerület ablak
+
+def negyukerulet():
     abl2 =Toplevel(root)
     abl2.minsize(width=430, height=300)
     L1 = Label(abl2, text="Oldalak hosszúsága")
     L1.pack(side = LEFT)
-    E1 = Entry(abl2, bd =5)
+    E1 = Entry(abl2)
     E1.pack(side = LEFT)
     E2 = Entry(abl2)
     E2.pack(side = RIGHT)
@@ -44,8 +48,57 @@ def negyujablak():
     gomb2.pack(side=BOTTOM)
     gomb3 = Button(abl2, text="számítás", command = negyzetkerulet)
     gomb3.pack(side=LEFT)
-
     abl2.mainloop()
+
+
+#Terület vagy kerület kiválasztás ablak
+
+
+def negyvalaszto():
+    abl3 = Toplevel(root)
+    abl3.minsize(width= 100, height=100)
+    gomb1 = Button(abl3, text="Kerület", command=negyukerulet)
+    gomb1.pack(side= LEFT)
+    gomb2 = Button(abl3, text="Terület", command=negyterulet )
+    gomb2.pack(side=RIGHT)
+    L1 = Label(abl3, text="Kerületet vagy Területet számoljak?")
+    L1.pack()
+    gomb3 = Button(abl3, text="Kilép", command=abl3.destroy)
+    gomb3.pack(side=BOTTOM)
+
+    abl3.mainloop()
+
+
+#Terület ablak
+
+
+def negyterulet():
+    abl2 = Toplevel(root)
+    abl2.minsize(width=430, height=300)
+    L1 = Label(abl2, text="Oldalak hosszúsága")
+    L1.pack(side = LEFT)
+    E1 = Entry(abl2)
+    E1.pack(side = LEFT)
+    E2 = Entry(abl2)
+    E2.pack(side = RIGHT)
+    def negyzetterulet():
+        a = eval(E1.get())
+        eredmeny = a*a
+        E2.delete(0,END)
+        E2.insert(0,int(eredmeny))
+    gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
+    gomb2.pack(side=BOTTOM)
+    gomb3 = Button(abl2, text="számítás", command = negyzetterulet)
+    gomb3.pack(side=LEFT)
+    abl2.mainloop()
+
+#Turtle Ide majd Márk légyszi, köszi
+
+
+
+#Négyzet ablak vége
+
+
 
 def rombujablak():
     abl2 =Toplevel(root)
@@ -78,7 +131,7 @@ menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Háromszög",command=harujablak)
 filemenu.add_command(label="Kör",command=korujablak)
-filemenu.add_command(label="Négyzet",command=negyujablak)
+filemenu.add_command(label="Négyzet",command=negyvalaszto)
 filemenu.add_command(label="Rombusz",command=rombujablak)
 filemenu.add_command(label="Trapéz",command=tarujablak)
 filemenu.add_command(label="Paralelogramma",command=parujablak)
