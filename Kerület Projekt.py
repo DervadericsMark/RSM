@@ -6,11 +6,8 @@ import math
 
 root = Tk()
 
-<<<<<<< HEAD
-=======
 root.minsize(width=300, height=200)
 root.title("Alakzatok")
->>>>>>> 615db6c69bde3bb5825f3990e069a2c1b309a16d
 
 can1=Canvas(root,width=200, height=150,bg="white")
 photo=PhotoImage(file='hatter4.png')
@@ -31,17 +28,20 @@ def harujablak():
     gomb2.pack(side=TOP)
 
     abl2.mainloop()
-def korujablak():    
+
+def korujablak():
     abl2 =Toplevel(root)
-    gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
-    gomb2.pack(side=TOP)
-    def korsugar():
-        sugara = int(sugar.get())
-        magassaga = int(magassag.get())
-        eredmeny = pi * sugara * sugara * magassaga
+    abl2.minsize(width=430, height=300)
+    L1 = Label(abl2, text="Kör")
+    L1.pack(side = LEFT)
+    E1 = Entry(abl2)
+    E1.pack(side = LEFT)
+    E2 = Entry(abl2)
+    E2.pack(side = RIGHT)
     def korterulet():
-        sugara*sugara*pi
-    def korkerulet():
+        gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
+        gomb2.pack(side=BOTTOM)
+
 
 
     abl2.mainloop()
