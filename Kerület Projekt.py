@@ -3,6 +3,11 @@ import math
 
 root = Tk()
 
+<<<<<<< HEAD
+=======
+root.minsize(width=300, height=200)
+root.title("Alakzatok")
+>>>>>>> 615db6c69bde3bb5825f3990e069a2c1b309a16d
 
 can1=Canvas(root,width=200, height=150,bg="white")
 photo=PhotoImage(file='hatter4.png')
@@ -11,9 +16,17 @@ can1.pack()
 
 root.minsize(width=200, height=200)
 def harujablak():
+
+
     abl2 =Toplevel(root)
+    L1 = Label(abl2, text="1. oldal")
+    L1.pack( side = LEFT)
+    E1 = Entry(abl2, bd =5)
+    E1.pack(side = RIGHT)
+
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
+
     abl2.mainloop()
 def korujablak():    
     abl2 =Toplevel(root)
@@ -31,9 +44,15 @@ def korujablak():
     abl2.mainloop()
 def negyujablak():
     abl2 =Toplevel(root)
+    abl2.minsize(width=200, height=200)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=TOP)
     abl2.mainloop()
+def negykerulet():
+    sz1 = Label(negyujablak, text = "a:")
+    sz2 = Label(negyujablak, text='Eredmény:')
+    m1= Entry(negyujablak)
+    m2= Entry(negyujablak)
 def rombujablak():
     abl2 =Toplevel(root)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
