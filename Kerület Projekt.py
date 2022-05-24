@@ -30,19 +30,31 @@ def harujablak():
     abl2.mainloop()
 
 def korujablak():
+    def Terulet():
+        sugar=eval(E1.get())
+        terulet=sugar*sugar*math.pi
+        E2.insert(0,str(terulet))
+    def Kerulet():
+        sugar=eval(E1.get())
+        kerulet=math.pi*math.pi*sugar
+        
     abl2 =Toplevel(root)
     abl2.minsize(width=430, height=300)
-    L1 = Label(abl2, text="Kör")
-    L1.pack(side = LEFT)
-    E1 = Entry(abl2)
-    E1.pack(side = LEFT)
-    E2 = Entry(abl2)
-    E2.pack(side = RIGHT)
-    def korterulet():
-        gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
-        gomb2.pack(side=BOTTOM)
+    L1=Label(abl2,text="A kör sugara:")
+    L1.grid(row=0,column=1)
+    L2=Label(abl2,text="A kör területe:")
+    L2.grid(row=1,column=1)
+    E1=Entry(abl2)
+    E1.grid(row=0,column=2)
+    E2=Entry(abl2)
+    E2.grid(row=1,column=2)
+    L3=Label(abl2,text="A kör kerülete:")
+    L3.grid(row=2,column=1)
+    E3=Entry(abl2)
+    E3.grid(row=2,column=2)
 
-
+    gomb1=Button(abl2,text="Terület",command=Terulet)
+    gomb1.grid(row=3,column=1)
 
     abl2.mainloop()
 
