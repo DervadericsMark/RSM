@@ -15,19 +15,62 @@ item=can1.create_image(80,80,image=photo)
 can1.pack()
 
 root.minsize(width=200, height=200)
+# Háromszög
 def harujablak():
-
-
     abl2 =Toplevel(root)
-    L1 = Label(abl2, text="1. oldal")
-    L1.pack( side = LEFT)
-    E1 = Entry(abl2, bd =5)
-    E1.pack(side = RIGHT)
-
+    abl2.minsize(width=430, height=300)
+    L1 = Label(abl2, text="Oldalak hosszúsága")
+    L1.pack(side = LEFT)
+    E1 = Entry(abl2)
+    E1.pack(side = LEFT)
+    E2 = Entry(abl2)
+    E2.pack(side = RIGHT)
+    def harujkerulet():
+        a = eval(E1.get())
+        eredmeny = a+b+c    
+        E2.delete(0,END)
+        E2.insert(0,int(eredmeny))
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
-    gomb2.pack(side=TOP)
-
+    gomb2.pack(side=BOTTOM)
+    gomb3 = Button(abl2, text="számítás", command = harujkerulet)
+    gomb3.pack(side=LEFT)
     abl2.mainloop()
+
+def harujvalaszto():
+    abl3 = Toplevel(root)
+    abl3.minsize(width= 100, height=100)
+    gomb1 = Button(abl3, text="Kerület", command=harujkerulet)
+    gomb1.pack(side= LEFT)
+    gomb2 = Button(abl3, text="Terület", command=harujterulet )
+    gomb2.pack(side=RIGHT)
+    L1 = Label(abl3, text="Kerületet vagy Területet számoljak?")
+    L1.pack()
+    gomb3 = Button(abl3, text="Kilép", command=abl3.destroy)
+    gomb3.pack(side=BOTTOM)
+    abl3.mainloop()
+
+def harujterulet():
+    abl2 = Toplevel(root)
+    abl2.minsize(width=430, height=300)
+    L1 = Label(abl2, text="Oldalak hosszúsága")
+    L1.pack(side = LEFT)
+    E1 = Entry(abl2)
+    E1.pack(side = LEFT)
+    E2 = Entry(abl2)
+    E2.pack(side = RIGHT)
+    def harujterulet():
+        a = eval(E1.get())
+        ma = eval(E1.get())
+        eredmeny = a*ma%2
+        E2.delete(0,END)
+        E2.insert(0,int(eredmeny))
+    gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
+    gomb2.pack(side=BOTTOM)
+    gomb3 = Button(abl2, text="számítás", command = harujterulet)
+    gomb3.pack(side=LEFT)
+    abl2.mainloop()
+
+# Vége
 
 def korujablak():
     def Terulet():
@@ -123,19 +166,83 @@ def negyterulet():
     gomb3.pack(side=LEFT)
     abl2.mainloop()
 
-#Turtle Ide majd Márk légyszi, köszi
+#Turtle Ide
 
 
 
 #Négyzet ablak vége
 
 
+#Rombusz ablak
 
-def rombujablak():
-    abl2 =Toplevel(root)
+
+#Rombusz felhasználói felület
+
+def romvalaszto():
+    abl3 = Toplevel(root)
+    abl3.minsize(width= 100, height=100)
+    gomb1 = Button(abl3, text="Kerület", command=romkerulet)
+    gomb1.pack(side= LEFT)
+    gomb2 = Button(abl3, text="Terület", command=romterulet )
+    gomb2.pack(side=RIGHT)
+    L1 = Label(abl3, text="Kerületet vagy Területet számoljak?")
+    L1.pack()
+    gomb3 = Button(abl3, text="Kilép", command=abl3.destroy)
+    gomb3.pack(side=BOTTOM)
+
+    abl3.mainloop()
+
+#Rombusz területe
+
+def romterulet():
+    abl2 = Toplevel(root)
+    abl2.minsize(width=430, height=300)
+    L1 = Label(abl2, text="Oldalak hosszúsága")
+    L1.pack(side = LEFT)
+    E1 = Entry(abl2)
+    E1.pack(side = LEFT)
+    L2 = Label(abl2, text = "Magasság")
+    L2.pack(side=LEFT)
+    E2 = Entry(abl2)
+    E2.pack(side = LEFT)
+    E3 = Entry(abl2)
+    E3.pack(side= RIGHT)
+    def romteruletszam():
+        a = eval(E1.get())
+        m = eval(E2.get())
+        eredmeny = a*m
+        E3.delete(0,END)
+        E3.insert(0,int(eredmeny))
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
-    gomb2.pack(side=TOP)
+    gomb2.pack(side=BOTTOM)
+    gomb3 = Button(abl2, text="számítás", command = romteruletszam)
+    gomb3.pack(side=LEFT)
     abl2.mainloop()
+
+#Rombusz Kerülete
+def romkerulet():
+    abl2 = Toplevel(root)
+    abl2.minsize(width=430, height=300)
+    L1 = Label(abl2, text="Oldalak hosszúsága")
+    L1.pack(side = LEFT)
+    E1 = Entry(abl2)
+    E1.pack(side = LEFT)
+    E3 = Entry(abl2)
+    E3.pack(side= RIGHT)
+    def romkeruletszam():
+        a = eval(E1.get())
+        eredmeny = a*4
+        E3.delete(0,END)
+        E3.insert(0,int(eredmeny))
+    gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
+    gomb2.pack(side=BOTTOM)
+    gomb3 = Button(abl2, text="számítás", command = romkeruletszam)
+    gomb3.pack(side=LEFT)
+    abl2.mainloop()
+
+#Rombusz feladat vége
+
+
 def tarujablak():
     abl2 =Toplevel(root)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
@@ -160,10 +267,10 @@ def tegujablak():
 menubar = Menu(root)
 
 filemenu = Menu(menubar, tearoff=0)
-filemenu.add_command(label="Háromszög",command=harujablak)
+filemenu.add_command(label="Háromszög",command=harujvalaszto)
 filemenu.add_command(label="Kör",command=korujablak)
 filemenu.add_command(label="Négyzet",command=negyvalaszto)
-filemenu.add_command(label="Rombusz",command=rombujablak)
+filemenu.add_command(label="Rombusz",command=romvalaszto)
 filemenu.add_command(label="Trapéz",command=tarujablak)
 filemenu.add_command(label="Paralelogramma",command=parujablak)
 filemenu.add_command(label="Deltoid",command=delujablak)
