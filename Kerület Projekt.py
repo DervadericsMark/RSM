@@ -72,43 +72,61 @@ def harujterulet():
 
 # Vége
 
-def korujablak():
+    
+def korujablakk():
     def Terulet():
         sugar=eval(E1.get())
         terulet=sugar*sugar*math.pi
         E2.insert(0,str(terulet))
     def Kerulet():
+        abl2 =Toplevel(root)
+        abl2.minsize(width=430, height=300)
+        E1=Entry(abl2)
+        E1.pack(side=RIGHT)
         sugar=eval(E1.get())
         kerulet=math.pi*math.pi*sugar
-    def ujablak():
-        abl3=Toplevel(root)
-        abl3.minsize(width= 100, height=100)
-        gomb1 = Button(abl3, text="Kerület", command=Kerulet)
-        gomb1.pack(side= LEFT)
-        gomb2 = Button(abl3, text="Terület", command=Terulet )
-        gomb2.pack(side=RIGHT)
-        L1 = Label(abl3, text="Kerületet vagy Területet számoljak?")
-        L1.pack()
-        gomb3 = Button(abl3, text="Kilép", command=abl3.destroy)
         gomb3.pack(side=BOTTOM)
+        E2=Entry(abl2)
+        E2.grid(row=0,column=1)
+        L2=Label(abl3,text="A kör sugara:")
+        L2.pack(side=LEFT)
 
-    abl2 =Toplevel(root)
-    abl2.minsize(width=430, height=300)
-    L1=Label(abl2,text="A kör sugara:")
-    L1.grid(row=0,column=1)
-    L2=Label(abl2,text="A kör területe:")
-    L2.grid(row=1,column=1)
-    E1=Entry(abl2)
-    E1.grid(row=0,column=2)
-    E2=Entry(abl2)
-    E2.grid(row=1,column=2)
-    L3=Label(abl2,text="A kör kerülete:")
-    L3.grid(row=2,column=1)
-    E3=Entry(abl2)
-    E3.grid(row=2,column=2)
+        E2=Entry(abl2)
+        E2.grid(row=1,column=2)
+        L3=Label(abl2,text="A kör kerülete:")
+        L3.grid(row=2,column=1)
+        E3=Entry(abl2)
+        E3.grid(row=2,column=2)
+    abl3=Toplevel(root)
+    abl3.minsize(width= 100, height=100)
+    gomb1 = Button(abl3, text="Kerület", command=Kerulet)
+    gomb1.pack(side= LEFT)
+    gomb2 = Button(abl3, text="Terület", command=Terulet )
+    gomb2.pack(side=RIGHT)
+    gomb3 = Button(abl3, text="Kilép", command=abl3.destroy)
+    gomb3.pack(side=BOTTOM)
+    L1 = Label(abl3, text="Kerületet vagy Területet számoljak?")
+    L1.pack()
 
-    gomb1=Button(abl2,text="Terület",command=Terulet)
-    gomb1.grid(row=3,column=1)
+    def Terulet():
+        abl2 =Toplevel(root)
+        abl2.minsize(width=430, height=300)
+        E1=Entry(abl2)
+        E1.pack(side=RIGHT)
+        sugar=eval(E1.get())
+        terulet=
+        gomb3.pack(side=BOTTOM)
+        E2=Entry(abl2)
+        E2.grid(row=0,column=1)
+        L2=Label(abl3,text="A kör sugara:")
+        L2.pack(side=LEFT)
+
+        E2=Entry(abl2)
+        E2.grid(row=1,column=2)
+        L3=Label(abl2,text="A kör kerülete:")
+        L3.grid(row=2,column=1)
+        E3=Entry(abl2)
+        E3.grid(row=2,column=2)
 
     abl2.mainloop()
 
@@ -279,7 +297,7 @@ menubar = Menu(root)
 
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Háromszög",command=harujvalaszto)
-filemenu.add_command(label="Kör",command=korujablak)
+filemenu.add_command(label="Kör",command=korujablakk)
 filemenu.add_command(label="Négyzet",command=negyvalaszto)
 filemenu.add_command(label="Rombusz",command=romvalaszto)
 filemenu.add_command(label="Trapéz",command=tarujablak)
