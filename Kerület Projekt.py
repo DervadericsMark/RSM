@@ -80,7 +80,18 @@ def korujablak():
     def Kerulet():
         sugar=eval(E1.get())
         kerulet=math.pi*math.pi*sugar
-        
+    def ujablak():
+        abl3=Toplevel(root)
+        abl3.minsize(width= 100, height=100)
+        gomb1 = Button(abl3, text="Kerület", command=Kerulet)
+        gomb1.pack(side= LEFT)
+        gomb2 = Button(abl3, text="Terület", command=Terulet )
+        gomb2.pack(side=RIGHT)
+        L1 = Label(abl3, text="Kerületet vagy Területet számoljak?")
+        L1.pack()
+        gomb3 = Button(abl3, text="Kilép", command=abl3.destroy)
+        gomb3.pack(side=BOTTOM)
+
     abl2 =Toplevel(root)
     abl2.minsize(width=430, height=300)
     L1=Label(abl2,text="A kör sugara:")
