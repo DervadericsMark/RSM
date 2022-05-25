@@ -16,7 +16,7 @@ can1.pack()
 
 root.minsize(width=200, height=200)
 # Háromszög
-def harujablak():
+def harujkerulet():
     abl2 =Toplevel(root)
     abl2.minsize(width=430, height=300)
     L1 = Label(abl2, text="Oldalak hosszúsága")
@@ -52,18 +52,22 @@ def harujvalaszto():
 def harujterulet():
     abl2 = Toplevel(root)
     abl2.minsize(width=430, height=300)
-    L1 = Label(abl2, text="Oldalak hosszúsága")
+    L1 = Label(abl2, text="a oldal hosszúsága")
     L1.pack(side = LEFT)
     E1 = Entry(abl2)
     E1.pack(side = LEFT)
-    E2 = Entry(abl2)
-    E2.pack(side = RIGHT)
+    L3 = Label(abl2, text="m magasság hosszúsága")
+    L3.pack(side = LEFT)
+    E3 = Entry(abl2)
+    E3.pack(side = LEFT)
+    E4 = Entry(abl2)
+    E4.pack(side=TOP)
     def harujterulet():
         a = eval(E1.get())
-        ma = eval(E1.get())
-        eredmeny = a*ma%2
-        E2.delete(0,END)
-        E2.insert(0,int(eredmeny))
+        ma = eval(E3.get())
+        eredmeny = a*ma/2
+        E4.delete(0,END)
+        E4.insert(0,int(eredmeny))
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
     gomb2.pack(side=BOTTOM)
     gomb3 = Button(abl2, text="számítás", command = harujterulet)
