@@ -94,7 +94,6 @@ def korujablakk():
         E2.grid(row=0,column=1)
         L2=Label(abl3,text="A kör sugara:")
         L2.pack(side=LEFT)
-
         E2=Entry(abl2)
         E2.grid(row=1,column=2)
         L3=Label(abl2,text="A kör kerülete:")
@@ -113,12 +112,12 @@ def korujablakk():
     L1.pack()
 
     def Terulet():
-        abl2 =Toplevel(root)
+        terulet=pi*2*2
+        abl2 =Toplevel(abl2)
         abl2.minsize(width=430, height=300)
         E1=Entry(abl2)
         E1.pack(side=RIGHT)
         sugar=eval(E1.get())
-        terulet=
         gomb3.pack(side=BOTTOM)
         E2=Entry(abl2)
         E2.grid(row=0,column=1)
@@ -132,7 +131,7 @@ def korujablakk():
         E3=Entry(abl2)
         E3.grid(row=2,column=2)
 
-    abl2.mainloop()
+        abl2.mainloop()
 
 #Négyzet ablak kezdete
 #Kerület ablak
