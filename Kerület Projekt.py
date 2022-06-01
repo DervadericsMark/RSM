@@ -276,10 +276,22 @@ def romkerulet():
 
 
 def tarujablak():
-    abl2 =Toplevel(root)
-    gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
-    gomb2.pack(side=TOP)
-    abl2.mainloop()
+    def ujablak():
+        abl2 =Toplevel(root)
+        gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
+        gomb2.pack(side=TOP)
+        abl2.mainloop()
+        abl3=Toplevel(root)
+        abl3.minsize(width= 100, height=100)
+        gomb1 = Button(abl3, text="Kerület",)
+        gomb1.pack(side= LEFT)
+        gomb2 = Button(abl3, text="Terület",)
+        gomb2.pack(side=RIGHT)
+        gomb3 = Button(abl3, text="Kilép", command=abl3.destroy)
+        gomb3.pack(side=BOTTOM)
+        L1 = Label(abl3, text="Kerületet vagy Területet számoljak?")
+        L1.pack()
+
 def parujablak():
     abl2 =Toplevel(root)
     gomb2 = Button(abl2, text="Kilép", command=abl2.destroy)
